@@ -23,15 +23,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+<!-- 	<build> -->
+<!-- 		<plugins> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.springframework.boot</groupId> -->
+<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
+<!-- 			</plugin> -->
 			
-		</plugins>
-	</build>
+<!-- 		</plugins> -->
+<!-- 	</build> -->
+<dependencyManagement>
 	<dependencies>
 	
     <dependency>
@@ -67,4 +68,5 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
 	</dependencies>
+</dependencyManagement>
 </project>
