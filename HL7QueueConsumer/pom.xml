@@ -8,7 +8,7 @@
 		<version>0.0.3-SNAPSHOT</version>
 	</parent>
 	<groupId>com.mj</groupId>
-	<artifactId>HL7QueueConsumer</artifactId>
+	<artifactId>hl7consumerr</artifactId>
 	<version>0.0.4-SNAPSHOT</version>
 	<name>Archetype - HL7QueueConsumer</name>
 	<packaging>jar</packaging>
@@ -22,6 +22,31 @@
 
 <!-- 		</plugins> -->
 <!-- 	</build> -->
+<build>
+<plugins>
+<plugin>
+  <groupId>com.spotify</groupId>
+  <artifactId>dockerfile-maven-plugin</artifactId>
+  <version>1.4.13</version>
+  <executions>
+    <execution>
+      <id>default</id>
+      <goals>
+        <goal>build</goal>
+        <goal>push</goal>
+      </goals>
+    </execution>
+  </executions>
+  <configuration>
+    <repository>${project.artifactId}</repository>
+    <tag>${project.version}</tag>
+    <buildArgs>
+      <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+    </buildArgs>
+  </configuration>
+</plugin>
+</plugins>
+</build>
 	<dependencies>
 
 
