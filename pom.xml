@@ -17,8 +17,8 @@
 
 	<modules>
 		<module>dao</module>
-		<module>Producer</module>
 		<module>Audit</module>
+		<module>hl7ws</module>
 		<module>HL7QueueConsumer</module>
 		</modules>
 		
@@ -27,15 +27,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
-<!-- 	<build> -->
-<!-- 		<plugins> -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.springframework.boot</groupId> -->
-<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
-<!-- 			</plugin> -->
-			
-<!-- 		</plugins> -->
-<!-- 	</build> -->
+
 
 
 

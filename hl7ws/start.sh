@@ -5,7 +5,7 @@ docker 	run \
 	--link=actmq1 \
 	--link=actmq2 \
 	-p $1:8080 \
-	--name hl7p_$1 \
+	--name hl7ws_$1 \
 	-d \
-	hl7_producer:0.1.1 \
+	hl7ws:0.0.3-SNAPSHOT 
 

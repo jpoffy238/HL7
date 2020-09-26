@@ -2,7 +2,7 @@ package com.mj.Audit;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 import com.mj.dao.entity.Audit;
@@ -14,7 +14,7 @@ public class AuditReceiver {
 	
 	org.slf4j.Logger logger = LoggerFactory.getLogger(AuditReceiver.class);
 	
-	
+	@JmsListener(destination = "${Audit.queue}", containerFactory = "myFactory")
 	public void receiveMessage(Audit audit) {
 		logger.debug(audit.toString());
 		try {

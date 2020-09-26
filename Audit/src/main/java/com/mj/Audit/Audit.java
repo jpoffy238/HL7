@@ -1,55 +1,33 @@
 package com.mj.Audit;
 
-
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
+import org.springframework.jms.support.converter.MessageConverter;
+import org.springframework.jms.support.converter.MessageType;
+
+/**
+ * Hello world!
+ *
+ */
 
 @SpringBootApplication
-public class Audit {
+@EnableJms
+public class Audit extends SpringBootServletInitializer {
+	public static void main(String[] args) {
 
-  static final String topicExchangeName = "spring-boot-exchange";
+		SpringApplication.run(Audit.class, args);
+	}
 
-  static final String queueName = "hrc_audit";
-
-  @Bean
-  Queue queue() {
-    return new Queue(queueName, false);
-  }
-
-  @Bean
-  TopicExchange exchange() {
-    return new TopicExchange(topicExchangeName);
-  }
-
-  @Bean
-  Binding binding(Queue queue, TopicExchange exchange) {
-    return BindingBuilder.bind(queue).to(exchange).with("AUDIT");
-  }
-
-  @Bean
-  SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
-      MessageListenerAdapter listenerAdapter) {
-    SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-    container.setConnectionFactory(connectionFactory);
-    container.setQueueNames(queueName);
-    container.setMessageListener(listenerAdapter);
-    return container;
-  }
-
-  @Bean
-  MessageListenerAdapter listenerAdapter(AuditReceiver receiver) {
-    return new MessageListenerAdapter(receiver, "receiveMessage");
-  }
-
-  public static void main(String[] args) throws InterruptedException {
-    SpringApplication.run(Audit.class, args).close();
-  }
+	@Bean // Serialize message content to json using TextMessage
+	public MessageConverter jacksonJmsMessageConverter() {
+		MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+		converter.setTargetType(MessageType.TEXT);
+		converter.setTypeIdPropertyName("_type");
+		return converter;
+	}
+	
 }
