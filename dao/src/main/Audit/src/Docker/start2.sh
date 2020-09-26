@@ -3,11 +3,11 @@ echo $@
 set -x
 docker  \
 	run \
-	-h audit3 \
+	-h audit2 \
 	--link=actmq1 \
 	--link=actmq2 \
 	--link=hrcp \
-	--name Audit3 \
+	--name Audit2 \
 	-d \
-	audit:0.0.3 
+	audit:0.1.0 
 

@@ -7,16 +7,6 @@ import org.slf4j.LoggerFactory;
 
 
 
-//import java.sql.Date;
-////import java.text.SimpleDateFormat;
-//import java.time.LocalDate;
-//import java.util.Locale;
-//import java.util.TimeZone;
-
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.Table;
-//
 //@Entity
 //@Table(name = "person")
 public class person {
