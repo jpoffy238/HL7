@@ -7,7 +7,7 @@ docker  \
 	--link=actmq1 \
 	--link=actmq2 \
 	--link=hrcp \
-	--name Audit \
+	--name Audit$1 \
 	-d \
 	audit:0.1.0-SNAPSHOT 
 
