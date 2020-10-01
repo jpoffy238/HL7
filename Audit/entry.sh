@@ -2,4 +2,4 @@
 echo "$PATH"
 type java
 
-java -jar /opt/Audit.jar 
+java -jar /app.jar

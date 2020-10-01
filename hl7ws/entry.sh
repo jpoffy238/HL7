@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "$PATH"
-type java
+ls -altr /app.jar
+sha256sum /app.jar
 
-java -jar /opt/hl7Producer.jar 
+java -jar /app.jar 

@@ -9,5 +9,5 @@ docker  \
 	--link=hrcp \
 	--name Audit$1 \
 	-d \
-	audit:0.1.0-SNAPSHOT 
+	audit:0.1.1-SNAPSHOT 
 

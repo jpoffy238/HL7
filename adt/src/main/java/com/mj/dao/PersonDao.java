@@ -23,8 +23,8 @@ public class PersonDao {
 	org.slf4j.Logger logger = LoggerFactory.getLogger(PersonDao.class);
 
 	public void insert(com.mj.dao.entity.person p) throws SQLException {
-		String newRecord_sql = "insert into person (key, hcpid, last_name,first_name,ssn,address,zip,dob,email_address ) "
-				+ " values (?,?,?,?,?,?,?,?,?);";
+		String newRecord_sql = "insert into person (key, hcpid, last_name,first_name,ssn,address,zip,dob,email_address, update_number ) "
+				+ " values (?,?,?,?,?,?,?,?,?, ?);";
 		Connection con = jdbcTemplate.getDataSource().getConnection();
 
 		try {
@@ -38,6 +38,7 @@ public class PersonDao {
 			statement.setString(7, p.getZip());
 			statement.setString(8, p.getDob());
 			statement.setString(9, p.getEmail_address());
+			statement.setInt(10, 0);
 			statement.execute();
 
 			statement.close();
