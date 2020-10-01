@@ -10,6 +10,6 @@ docker  \
 	-d \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=777,tmpfs-size=10000000 \
 	--name $1 \
-	hl7consumerr:0.0.5-SNAPSHOT \
+	adt:0.0.5-SNAPSHOT \
 	$1
 
