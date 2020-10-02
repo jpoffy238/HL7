@@ -6,7 +6,7 @@ docker  \
 	-h $1 \
 	--link=actmq1 \
 	--link=actmq2 \
-	--link=hrcp \
+	--link=/hrcp \
 	-d \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=777,tmpfs-size=10000000 \
 	--name $1 \
