@@ -4,8 +4,9 @@ docker 	run \
 	-h hl7p \
 	--link=actmq1 \
 	--link=actmq2 \
-	-p $1:8080 \
-	--name hl7ws_$1 \
+	-p 8080:8080 \
+	-p 8085:8085 \
+	--name hl7ws_8080 \
 	-d \
-	hl7ws:0.0.5-SNAPSHOT 
+	hl7ws:0.0.7-SNAPSHOT 
 
