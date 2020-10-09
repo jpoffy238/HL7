@@ -9,5 +9,7 @@ docker  \
 	--link=/hrcp \
 	--name Audit$1 \
 	-d \
-	audit:0.1.1-SNAPSHOT 
+	-m 256m \
+	--memory-swap=0 \
+	audit:0.1.2-SNAPSHOT 
 

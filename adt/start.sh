@@ -8,6 +8,8 @@ docker  \
 	--link=actmq2 \
 	--link=/hrcp \
 	-d \
+	-m 512m \
+	--memory-swap=0 \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=777,tmpfs-size=10000000 \
 	--name $1 \
 	adt:0.0.5-SNAPSHOT \

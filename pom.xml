@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>dao</module>
+		<module>entities</module>
 		<module>Audit</module>
 		<module>hl7ws</module>
 		<module>HL7QueueConsumer</module>
