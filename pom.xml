@@ -19,7 +19,7 @@
 		<module>entities</module>
 		<module>Audit</module>
 		<module>hl7ws</module>
-		<module>HL7QueueConsumer</module>
+		<module>adt</module>
 		</modules>
 		
 	<properties>

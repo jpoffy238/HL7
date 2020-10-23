@@ -9,5 +9,5 @@ docker 	run \
 	--name hl7ws_8080 \
 	-d \
 	-m=256m \
-	hl7ws:0.0.7-SNAPSHOT 
+	hl7ws:0.0.8-SNAPSHOT 
 
