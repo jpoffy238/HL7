@@ -63,8 +63,8 @@ public class MessageController {
 			
 			jmsTemplate.convertAndSend(auditDestination, audit);
 			
-			//Queue destination = queue.get(hcpid);
-			Queue destination = queue.get("adt_100");
+			Queue destination = queue.get(hcpid);
+			//Queue destination = queue.get("adt_100");
 			if (destination != null) {
 				
 				jmsTemplate.convertAndSend(destination, s);
