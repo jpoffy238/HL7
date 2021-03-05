@@ -15,18 +15,30 @@
 	<name>HL7</name>
 	<packaging>pom</packaging>
 	<scm>
-		<developerConnection>git@github.com:jpoffen238/HL7.git</developerConnection>
-	
+	<connection>scm:git:git@githum,com/jpoffy238/HL7.git</connection>
+		<url>scm:git:git@githum,com/jpoffy238/HL7.git</url>
+	 <tag>HEAD</tag>
 	</scm>
 <build>
 
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>3.0.0-M1</version>
-        
-      </plugin>
+       <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>3.0.0-M1</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-provider-gitexe</artifactId>
+                    <version>1.9.5</version>
+                </dependency>
+            </dependencies>
+            <configuration>
+                <branchName>develop</branchName>
+                <pushChanges>false</pushChanges>
+                <localCheckout>true</localCheckout>
+            </configuration>
+        </plugin>
     </plugins>
     </build>
 	<modules>
